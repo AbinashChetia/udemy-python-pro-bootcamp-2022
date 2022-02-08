@@ -1,3 +1,4 @@
+# Resources
 welcome = '''
 *******************************************************************************
           |                   |                  |                     |
@@ -23,17 +24,89 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 Welcome to Treasure Island.
 Your mission is to find the treasure.
 '''
-prize = '''
-You opened the door and you see a treasure chest. Congrats you found the treasure!\n
+prize = '''You opened the door and you see a treasure chest. Congrats you found the treasure!\n
          __________
-        /\____;;___\
+        /\____;;___\\
        | /         /
        `. ())oo() .
-        |\(%()*^^()^\
+        |\(%()*^^()^\\
        %| |-%-------|
       % \ | %  ))   |
       %  \|%________|
+      %%%%%
 '''
+trout = '''You are attacked by trout.\nGAME OVER!!!\n
+                        /\\
+                       /  |
+                       \  o
+                   _.-`/`-._
+       _         _/         \_         _
+      ) `-._   _/  /O\   /O\  \_   _.-` (
+     )      `-/    `-'   `-'    \-`      (
+     )     _.-|      ___        |-._     (
+      )_.-`   \   .-'   `-._    /   `-._(
+               \   `-.___.--`  /
+                "-._       _.-"
+                    "-._.-"
+'''
+beast = '''You are eaten by Beasts.\nGAME OVER!!!\n
+                   (    )
+                  ((((()))
+                  |o\ /o)|
+                  ( (  _')
+                   (._.  /\__
+                  ,\___,/ '  ')
+    '.,_,,       (  .- .   .    )
+     \   \\\\     ( '        )(    )
+      \   \\\\    \.  _.__ ____( .  |
+       \  /\\\\   .(   .'  /\  '.  )
+        \(  \\\\.-' ( /    \/    \)
+         '  ()) _'.-|/\/\/\/\/\|
+             '\\\\ .( |\/\/\/\/\/|
+               '((  \    /\    /
+               ((((  '.__\/__.')
+                ((,) /   ((()   )
+                 "..-,  (()("   /
+                  _//.   ((() ."
+          _____ //,/" ___ ((( ', ___
+                           ((  )
+                            / /
+                          _/,/'
+                        /,/,"
+'''
+fire = '''You are burned by fire.\nGAME OVER!!!\n
+               (  .      )
+           )           (              )
+                 .  '   .   '  .  '  .
+        (    , )       (.   )  (   ',    )
+         .' ) ( . )    ,  ( ,     )   ( .
+      ). , ( .   (  ) ( , ')  .' (  ,    )
+     (_,) . ), ) _) _,')  (, ) '. )  ,. (' )
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'''
+fall = '''You fall into a hole.\nGAME OVER!!!\n
+                     a.                                    
+            ---._   _`8P      .                            
+                 `  \`|   ___.8                            
+                    / (  / __(P                            
+               --.  \  \( ( _.   \\\  ___ |/_              
+                  `  \  `_,/  \--( ">'__.(-'               
+                      `-/  `-     \_(                      
+                       (__.----. (_                        
+                               `\__(\|/                    
+                                    `"
+'''
+invalid = '''You have entered an invalid choice.\nGAME OVER!!!\n
+            ,-,,-,   __
+     ______/     /_,'  |
+     \________________/
+          |\) (/ |
+       (  | oo   |
+        ) `|  |--'
+       (___^^^^|
+          (____' 
+'''
+# Main code
 print(welcome)
 opt1 = input('You\'re at a cross road. Where do you want to go? Type "left" or "right"\n').lower()
 if opt1 == 'left':
@@ -43,18 +116,16 @@ if opt1 == 'left':
         if opt3 == 'yellow':
             print(prize)
         elif opt3 == 'blue':
-            print('You are eaten by Beasts.\nGAME OVER!!!\n')
+            print(beast)
         elif opt3 == 'red':
-            print('You are burned by fire.\nGAME OVER!!!\n')
+            print(fire)
         else:
-            print('The door you have selected doesn\'t exist.\nGAME OVER!!!\n')
+            print(invalid)
     elif opt2 == 'swim':
-        print('You are attacked by trout.\nGAME OVER!!!\n')
+        print(trout)
     else:
-        print('You have entered an invalid choice.\nGAME OVER!!!\n')
+        print(invalid)
 elif opt1 == 'right':
-    print('You fall into a hole.\nGAME OVER!!!\n')
+    print(fall)
 else:
-    print('You have entered an invalid choice.\nGAME OVER!!!\n')
-
-        
+    print(invalid)
